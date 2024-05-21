@@ -1,20 +1,22 @@
 package latihanQuiz2;
 
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Queue q = new Queue();
-        System.out.println("===================================");
-        System.out.println("=== SUPERMARKET QUEUE SIMULATOR ===");
-        System.out.println("===================================");
+        System.out.println("====================================================");
+        System.out.println("=======      SUPERMARKET QUEUE SIMULATOR     =======");
+        System.out.println("====================================================");
 
         int pilih;
         do {
             System.out.println("1. Masukkan antrian");
             System.out.println("2. Panggil antrian");
             System.out.println("3. Lihat antrian");
-            System.out.println("4. Keluar");
+            System.out.println("4. Cari antrian");
+            System.out.println("5. Keluar");
             System.out.print("Pilih menu: ");
             pilih = sc.nextInt();
             sc.nextLine();
@@ -36,14 +38,18 @@ public class Main {
                     q.tampil();
                     break;
                 case 4:
+                    System.out.println("Masukkan nama yang dicari:");
+                    String cari = sc.nextLine();
+                    q.cariNama(cari);
+                    break;
+                case 5:
                     System.out.println("====================================================");
                     System.out.println("===  Terima kasih telah menggunakan program ini  ===");
                     System.out.println("====================================================");
-                    break;
                 default:
                     System.out.println("Pilihan tidak tersedia");
             }
-        } while (pilih != 4);
+        } while (pilih != 5);
         
 
     }

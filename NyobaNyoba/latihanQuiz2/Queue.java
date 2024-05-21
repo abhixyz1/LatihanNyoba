@@ -48,5 +48,22 @@ public class Queue {
         System.out.println();
     }
 
-    
+    void cariNama(String cari) {
+        if (this.front == null) {
+            System.out.println("Antrian kosong");
+            return;
+        }
+
+        Node currentNode = this.front;
+        int position = 1;
+        while (currentNode != null) {
+            if (currentNode.nama.equalsIgnoreCase(cari)) {
+                System.out.println("Nama " + cari + " ditemukan pada antrian ke-" + position);
+                return;
+            }
+            currentNode = currentNode.next;
+            position++;
+        }
+        System.out.println("Nama " + cari + " tidak ditemukan");
+    } 
 }
