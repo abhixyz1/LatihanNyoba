@@ -13,7 +13,7 @@ public class SLL {
     public SLL() {
         this.head = this.tail = null;
         this.totalPendapatan = 0;
-        this.daftarPesanan = new Pesanan[100]; // Anda bisa menyesuaikan ukuran array sesuai kebutuhan
+        this.daftarPesanan = new Pesanan[1000000];
     }
 
     void tambahAntrian(String nama, String noHP) {
@@ -67,7 +67,7 @@ public class SLL {
 
         System.out.println("Daftar Pesanan: ");
         System.out.println("Nomor Pesanan \t Nama Pesanan \t Harga");
-        System.out.println(pesanan.kodePesanan + "\t" + pesanan.namaPesanan + "\t" + pesanan.harga);
+        System.out.println(pesanan.kodePesanan + "\t\t" + pesanan.namaPesanan + "\t\t" + pesanan.harga);
 
         totalPendapatan += harga;
         this.nomorPesanan++;
@@ -101,7 +101,7 @@ public class SLL {
         System.out.println("Nomor Pesanan \t Nama Pesanan \t Harga");
         for (int i = 0; i < this.nomorPesanan - 1; i++) {
             if (daftarPesanan[i] != null) {
-                System.out.println(daftarPesanan[i].kodePesanan + "\t" + daftarPesanan[i].namaPesanan + "\t" + daftarPesanan[i].harga);
+                System.out.println(daftarPesanan[i].kodePesanan + "\t\t" + daftarPesanan[i].namaPesanan + "\t\t" + daftarPesanan[i].harga);
             }
         }
     }
